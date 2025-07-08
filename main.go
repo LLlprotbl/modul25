@@ -1,16 +1,21 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"log"
+	"os"
+	"strings"
 )
 
 func main() {
-	n := 0
+	reader := bufio.NewReader(os.Stdin)
 	fmt.Print("Введите целое число: ")
-	_, err := fmt.Scan(&n)
+	input, err := reader.ReadString('\n') // Читаем до перевода строки
+
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("Вы ввели число: %d\n", n)
+	input = strings.TrimSpace(input)          // Убираем лишние пробелы и \n
+	fmt.Printf("Вы ввели число: %q\n", input) // %q для вывода в кавычках (если строка)
 }
