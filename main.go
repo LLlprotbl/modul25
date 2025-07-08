@@ -10,12 +10,12 @@ import (
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Введите целое число: ")
+	fmt.Print("Введите данные: ")
 	input, err := reader.ReadString('\n') // Читаем до перевода строки
 
 	if err != nil {
 		log.Fatal(err)
 	}
-	input = strings.TrimSpace(input)          // Убираем лишние пробелы и \n
-	fmt.Printf("Вы ввели число: %q\n", input) // %q для вывода в кавычках (если строка)
+	input = strings.TrimSpace(input)                     // Убираем лишние пробелы и \n
+	fmt.Printf("Вы ввели следующие данные: %q\n", input) // %q для вывода в кавычках (если строка)
 }
